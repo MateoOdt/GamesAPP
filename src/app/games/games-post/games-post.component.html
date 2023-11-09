@@ -1,0 +1,49 @@
+<div class="gamesPostWrapper">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header style="background-color: rgb(67, 80, 175)">
+      <div class="titleWrapper">
+        <mat-panel-title style="color: white"
+          ><i class="material-icons" style="margin-right: 20px"
+            >videogame_asset</i
+          >
+          Add a new Game to your library</mat-panel-title
+        >
+      </div>
+    </mat-expansion-panel-header>
+    <div class="panelBody">
+      <div class="form">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Description"></textarea>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Plateforme</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Categorie</mat-label>
+          <mat-select (selectionChange)="onCategorySelection($event.value)">
+            <mat-option
+              *ngFor="let categorie of categorieRes.results"
+              [value]="categorie.id"
+            >
+              {{ categorie.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          type="submit"
+          (click)="onSubmit()"
+          color="primary"
+        >
+          <mat-icon style="margin-right: 10px; color: white">add</mat-icon>Add
+        </button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</div>

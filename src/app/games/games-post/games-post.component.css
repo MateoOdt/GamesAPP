@@ -1,0 +1,19 @@
+.gamesPostWrapper {
+  margin: 30px 50px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.panelBody {
+  margin-top: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}

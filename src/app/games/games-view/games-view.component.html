@@ -1,0 +1,35 @@
+<h3>Total games in your library : {{ games.count }}</h3>
+<div class="container">
+  <div class="cards" *ngFor="let game of games.results">
+    <div class="wrapper">
+      <div class="header">
+        <h1>{{ game.title }}</h1>
+        <mat-icon (click)="game.url && deleteGame(game.url)"
+          >delete_outline</mat-icon
+        >
+      </div>
+      <span>{{ game.desc }}</span>
+      <div class="descLine">
+        <span
+          matTooltip="Added Date"
+          matTooltipClass="example-tooltip-uppercase"
+          >{{ game.addedDate }}</span
+        >
+        <div
+          class="plateform"
+          matTooltip="Plateforme"
+          matTooltipClass="example-tooltip-uppercase"
+        >
+          <span>{{ game.plateform }}</span>
+        </div>
+        <div
+          class="categorie"
+          matTooltip="Categorie"
+          matTooltipClass="example-tooltip-uppercase"
+        >
+          <span style="color: white">FPS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

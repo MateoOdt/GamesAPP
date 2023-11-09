@@ -1,0 +1,10 @@
+.importantCell {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(47, 55, 126);
+  border-radius: 10px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-weight: 500;
+}

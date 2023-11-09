@@ -1,0 +1,28 @@
+<app-games-post></app-games-post>
+<div class="gamesWrapper">
+  <button
+    mat-mini-fab
+    color="primary"
+    matTooltip="Table"
+    aria-label="Example icon button with a menu icon"
+    style="margin-right: 10px; margin-bottom: 10px"
+    (click)="showTable()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button
+    mat-mini-fab
+    color="primary"
+    matTooltip="Cards"
+    aria-label="Example icon button with a menu icon"
+    (click)="showCards()"
+  >
+    <i class="material-icons">credit_card</i>
+  </button>
+  <div *ngIf="showCardsComponent">
+    <app-games-view></app-games-view>
+  </div>
+  <div *ngIf="showTableComponent">
+    <app-games-view-table></app-games-view-table>
+  </div>
+</div>

@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class CategoriesServices {
   private baseUrl = 'http://localhost:8000/categorie/';
   token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5NDU0MjY3LCJpYXQiOjE2OTk0NTA2NjcsImp0aSI6ImRhNmRhNjQ0YTQ3YjRlYjZiNTNjMTJlNzY1OTVlMjIzIiwidXNlcl9pZCI6MX0.XFv3gAtU0spJIkOuQT4RIkkMGNtrfDZX0Civ2cOlbFE';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5NTY2ODM5LCJpYXQiOjE2OTk1NjMyMzksImp0aSI6ImU2OWM5ZThjYzBmMzQwZWNiNjExMmNiODIzYzhkOWI1IiwidXNlcl9pZCI6MX0.IE2OAsunscFeWp_Kp6VeZ10K6LHCgTdT1DVsGpvXePI';
 
   headers_object = new HttpHeaders()
     .set('Content-Type', 'application/json')

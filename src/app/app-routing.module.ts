@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'games', component: GamesViewComponent },
   { path: 'categories', component: CategoriesComponent },
+  ///{ path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

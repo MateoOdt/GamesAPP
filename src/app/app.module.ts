@@ -27,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthServices } from './auth/auth.services';
 import { AuthGuard } from './auth/auth.guard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     GamesPostComponent,
     GamesViewTableComponent,
     GamesComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

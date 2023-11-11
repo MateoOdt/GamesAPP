@@ -1,7 +1,6 @@
 import { Component, OnInit, Query } from '@angular/core';
 import { GamesServices } from '../games.services';
 import { QueryRes } from 'src/app/interfaces/QueryRes';
-import { Game } from 'src/app/interfaces/Game';
 
 @Component({
   selector: 'app-games-view',

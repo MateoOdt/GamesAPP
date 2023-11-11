@@ -4,6 +4,7 @@ import { LoginFormComponent } from './auth/login-form/login-form.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { GamesViewComponent } from './games/games-view/games-view.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -13,7 +14,7 @@ const routes: Routes = [
     component: CategoriesComponent,
     canActivate: [AuthGuard],
   },
-  ///{ path: '**', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

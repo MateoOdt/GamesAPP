@@ -11,7 +11,13 @@ export class GamesViewTableComponent {
   constructor(private gamesService: GamesServices) {}
 
   games: QueryRes = { count: 0, next: '', previous: '', results: [] };
-  displayedColumns: string[] = ['Title', 'Desc', 'AddedDate', 'Plateform'];
+  displayedColumns: string[] = [
+    'Title',
+    'Desc',
+    'AddedDate',
+    'Plateform',
+    'Categorie',
+  ];
 
   ngOnInit(): void {
     this.gamesService.getGames().subscribe((games: QueryRes) => {

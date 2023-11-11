@@ -28,6 +28,16 @@
     </td>
   </ng-container>
 
+  <!-- Categorie Column -->
+  <ng-container matColumnDef="Categorie">
+    <th mat-header-cell *matHeaderCellDef>Categorie</th>
+    <td mat-cell *matCellDef="let game">
+      <div class="importantCell">
+        {{ game.categorie }}
+      </div>
+    </td>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

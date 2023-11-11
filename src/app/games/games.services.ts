@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Game } from '../interfaces/Game';
 import { Observable, of, tap } from 'rxjs';
+import { AuthServices } from '../auth/auth.services';
 
 @Injectable({
   providedIn: 'root',
@@ -11,18 +12,17 @@ export class GamesServices {
   private postBaseUrl = 'http://localhost:8000/games/';
   private postsCache$?: Observable<Game[]>;
 
-  token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5NTY2ODM5LCJpYXQiOjE2OTk1NjMyMzksImp0aSI6ImU2OWM5ZThjYzBmMzQwZWNiNjExMmNiODIzYzhkOWI1IiwidXNlcl9pZCI6MX0.IE2OAsunscFeWp_Kp6VeZ10K6LHCgTdT1DVsGpvXePI';
+  token2 = this.authService.getToken();
 
   headers_object = new HttpHeaders()
     .set('Content-Type', 'application/json')
-    .set('Authorization', 'Bearer ' + this.token);
+    .set('Authorization', 'Bearer ' + this.token2);
 
   httpOptions = {
     headers: this.headers_object,
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthServices) {}
 
   /**
    * GET Games API Call

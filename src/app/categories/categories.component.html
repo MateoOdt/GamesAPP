@@ -1,1 +1,8 @@
-<p>categories works!</p>
+<div class="wrapper">
+  <h1>List of Categories</h1>
+  <div class="cat" *ngFor="let categorie of categorieRes.results">
+    <div class="card">
+      <h2>{{ categorie.name }}</h2>
+    </div>
+  </div>
+</div>

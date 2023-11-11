@@ -5,10 +5,11 @@ import { CategoriesComponent } from './categories/categories.component';
 import { GamesViewComponent } from './games/games-view/games-view.component';
 import { AuthGuard } from './auth/auth.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GamesComponent } from './games/games.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
-  { path: 'games', component: GamesViewComponent, canActivate: [AuthGuard] },
+  { path: 'games', component: GamesComponent, canActivate: [AuthGuard] },
   {
     path: 'categories',
     component: CategoriesComponent,

@@ -1,13 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthServices } from '../auth/auth.services';
+import { Categorie } from '../interfaces/Categorie';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoriesServices {
   private baseUrl = 'http://localhost:8000/categorie/';
-  token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5NTY2ODM5LCJpYXQiOjE2OTk1NjMyMzksImp0aSI6ImU2OWM5ZThjYzBmMzQwZWNiNjExMmNiODIzYzhkOWI1IiwidXNlcl9pZCI6MX0.IE2OAsunscFeWp_Kp6VeZ10K6LHCgTdT1DVsGpvXePI';
+  token = this.authService.getToken();
 
   headers_object = new HttpHeaders()
     .set('Content-Type', 'application/json')
@@ -17,13 +19,22 @@ export class CategoriesServices {
     headers: this.headers_object,
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthServices) {}
 
   /**
    * GET Categories API Call
    * @returns Object
    */
-  getCategories(): any {
+  getCategories(): Observable<any> {
     return this.http.get<any>(this.baseUrl, this.httpOptions);
+  }
+
+  /**
+   * Get Categorie By id: API CALL
+   * @param url
+   * @returns
+   */
+  GetCategorieById(url: any): Observable<Categorie> {
+    return this.http.get<Categorie>(url, this.httpOptions);
   }
 }

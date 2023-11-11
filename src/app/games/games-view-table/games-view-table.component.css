@@ -1,5 +1,5 @@
 .importantCell {
-  width: 100px;
+  min-width: 100px;
   height: 30px;
   background-color: rgb(47, 55, 126);
   border-radius: 10px;

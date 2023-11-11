@@ -26,6 +26,7 @@ import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthServices } from './auth/auth.services';
 import { AuthGuard } from './auth/auth.guard';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { AuthGuard } from './auth/auth.guard';
     MatButtonModule,
     MatTableModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
   ],
   providers: [GamesServices, AuthServices, AuthGuard],
   bootstrap: [AppComponent],

@@ -23,6 +23,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { GamesViewTableComponent } from './games/games-view-table/games-view-table.component';
 import { GamesComponent } from './games/games.component';
 import { MatTableModule } from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthServices } from './auth/auth.services';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -49,8 +52,9 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatButtonModule,
     MatTableModule,
+    ReactiveFormsModule,
   ],
-  providers: [GamesServices],
+  providers: [GamesServices, AuthServices, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -28,6 +28,8 @@ import { AuthServices } from './auth/auth.services';
 import { AuthGuard } from './auth/auth.guard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TopBarComponent } from './common/top-bar/top-bar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     GamesViewTableComponent,
     GamesComponent,
     PageNotFoundComponent,
+    TopBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatTableModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatToolbarModule,
   ],
   providers: [GamesServices, AuthServices, AuthGuard],
   bootstrap: [AppComponent],

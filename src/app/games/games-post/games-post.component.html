@@ -10,40 +10,46 @@
         >
       </div>
     </mat-expansion-panel-header>
-    <div class="panelBody">
-      <div class="form">
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput />
-        </mat-form-field>
-        <mat-form-field>
-          <textarea matInput placeholder="Description"></textarea>
-          <input matInput />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Plateforme</mat-label>
-          <input matInput />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Categorie</mat-label>
-          <mat-select (selectionChange)="onCategorySelection($event.value)">
-            <mat-option
-              *ngFor="let categorie of categorieRes.results"
-              [value]="categorie.id"
-            >
-              {{ categorie.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <button
-          mat-raised-button
-          type="submit"
-          (click)="onSubmit()"
-          color="primary"
-        >
-          <mat-icon style="margin-right: 10px; color: white">add</mat-icon>Add
-        </button>
+    <form [formGroup]="postGameForm" (ngSubmit)="onSubmit()">
+      <div class="panelBody">
+        <div class="form">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="title" />
+          </mat-form-field>
+          <mat-form-field>
+            <textarea
+              matInput
+              placeholder="Description"
+              formControlName="desc"
+            ></textarea>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Plateforme</mat-label>
+            <input matInput formControlName="plateform" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Categorie</mat-label>
+            <mat-select (selectionChange)="onCategorySelection($event.value)">
+              <mat-option
+                *ngFor="let categorie of categorieRes.results"
+                [value]="categorie.id"
+              >
+                {{ categorie.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button
+            mat-raised-button
+            type="submit"
+            (click)="onSubmit()"
+            color="primary"
+          >
+            <mat-icon style="margin-right: 10px; color: white">add</mat-icon>Add
+          </button>
+        </div>
       </div>
-    </div>
+    </form>
   </mat-expansion-panel>
 </div>

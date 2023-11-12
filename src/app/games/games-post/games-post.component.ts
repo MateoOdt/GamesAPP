@@ -5,6 +5,7 @@ import { GamesServices } from '../games.services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-games-post',
@@ -18,7 +19,8 @@ export class GamesPostComponent {
     private categorieService: CategoriesServices,
     private gamesService: GamesServices,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {
     this.postGameForm = this.fb.group({
       title: ['', Validators.required],
@@ -39,10 +41,10 @@ export class GamesPostComponent {
   };
 
   data = {
-    title: 'aa',
-    desc: 'aaa',
-    addedDate: '2023-11-08',
-    plateform: 'STEAM',
+    title: '',
+    desc: '',
+    addedDate: '',
+    plateform: '',
     categorie: this.selectedId,
   };
 
@@ -74,6 +76,12 @@ export class GamesPostComponent {
         (response: any) => {
           console.log('Post created successfully.');
           console.log(response);
+          let currentUrl = this.router.url;
+          this.router
+            .navigateByUrl('/', { skipLocationChange: true })
+            .then(() => {
+              this.router.navigate([currentUrl]);
+            });
         },
         (error: any) => {
           console.log('Error:', error);

@@ -4,6 +4,7 @@ import { QueryResCategorie } from 'src/app/interfaces/QueryResCategorie';
 import { GamesServices } from '../games.services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-games-post',
@@ -16,7 +17,8 @@ export class GamesPostComponent {
   constructor(
     private categorieService: CategoriesServices,
     private gamesService: GamesServices,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar
   ) {
     this.postGameForm = this.fb.group({
       title: ['', Validators.required],
@@ -75,6 +77,13 @@ export class GamesPostComponent {
         },
         (error: any) => {
           console.log('Error:', error);
+          this.snackBar.open(
+            'Something wrong happened, please try again',
+            'Undo',
+            {
+              duration: 4000,
+            }
+          );
         }
       );
     } catch (err) {
